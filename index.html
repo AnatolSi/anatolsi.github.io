@@ -1,0 +1,166 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanderLust</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Discover Italy</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+
+      <div class="content active">
+        <h1>La Bella <br /><span>Toscana</span></h1>
+        <p>
+          Welcome to Tuscany, a region in central Italy known for its natural
+          beauty, rich history, and culinary excellence. Explore charming towns,
+          magnificent art collections, and picturesque vineyards. Taste
+          mouth-watering dishes like ribollita and bistecca alla fiorentina, and
+          some of the best wines in the world. Enjoy activities like hiking,
+          relaxing on the beaches, and exploring ancient ruins. Discover the
+          beauty and magic of Tuscany for yourself!
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Calm <br /><span>Waters</span></h1>
+        <p>
+          You can discover the stunning mountains and waters of this beautiful
+          country. Italy's mountain ranges, including the Alps, Dolomites, and
+          Apennines, offer breathtaking views and endless opportunities for
+          outdoor adventure, from skiing and snowboarding to hiking and
+          mountaineering. Lake Como and Lake Garda, offer a tranquil retreat
+          surrounded by breathtaking scenery. Whether you're seeking adventure
+          or relaxation, Italy's mountains and waters are waiting to be
+          explored. Book your trip today and experience the beauty of Italy's
+          natural landscapes.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Tasty<br /><span>Eataly</span></h1>
+        <p>
+          Italian cuisine is known for its simplicity, fresh ingredients, and
+          bold flavors. From classic pasta dishes like spaghetti carbonara and
+          lasagna to authentic pizza, risotto, and antipasti, there is something
+          to satisfy every taste bud. And let's not forget the delectable
+          desserts, including tiramisu, panna cotta, and gelato. But Italian
+          food is more than just the dishes themselves, it's also about the
+          culture and passion behind them. Italian kitchens are often the heart
+          of the home, where families and friends gather to share meals and
+          create memories. And in Italy, food is not just sustenance but an
+          expression of love and hospitality. Come and experience the warmth and
+          flavors of Italy for yourself.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Romantic<br /><span>Venice</span></h1>
+        <p>
+          The enchanting city of canals and bridges. Situated on a group of
+          small islands separated by canals and linked by bridges, Venice is a
+          unique and romantic destination. Explore the charming narrow streets
+          and stunning architecture. Glide along the canals in a gondola or
+          vaporetto, and marvel at the colorful buildings and picturesque
+          bridges. Savor delicious Venetian cuisine, including fresh seafood and
+          cicchetti, the Venetian version of tapas. And don't forget to indulge
+          in some of the city's famous glassware and handmade masks. Whether
+          you're looking for a romantic getaway or a cultural adventure, Venice
+          is a must-see destination that will capture your heart.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Powerful<br /><span>Rome</span></h1>
+        <p>
+          The eternal city and one of the world's most iconic destinations. Rome
+          is a city steeped in history, culture, and art, with iconic landmarks
+          at every turn. From the ancient Colosseum and the Roman Forum to the
+          stunning Vatican City, Rome offers a glimpse into the past like no
+          other city. Stroll through the charming streets and piazzas, stopping
+          to enjoy delicious Italian cuisine and gelato along the way.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      //Javascript of responsive navigation menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      //Javascript for video slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      };
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>
